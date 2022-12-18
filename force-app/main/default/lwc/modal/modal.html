@@ -1,0 +1,24 @@
+<template>
+    <lightning-button label={label} onclick={toggleModal}></lightning-button>
+    <template if:true={modalShown}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__close" style="cursor: pointer;">
+                    <lightning-icon icon-name="utility:close" 
+                                    variant="inverse" 
+                                    title="Close" 
+                                    onclick={toggleModal}>
+                    </lightning-icon>
+                </div>
+                <div class="slds-modal__header"></div>
+                <div class="slds-modal__content">
+                    <slot></slot>
+                </div>
+                <div class="slds-modal__footer">
+                    <lightning-button label="Cancel" onclick={toggleModal}></lightning-button>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>    
+</template>

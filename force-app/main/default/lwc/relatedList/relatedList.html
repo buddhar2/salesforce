@@ -1,0 +1,28 @@
+<!-- sldsValidatorIgnore -->
+<template>        
+    <lightning-card>
+        <h2 slot="title">
+            <lightning-icon icon-name="standard:record" size="small"></lightning-icon>
+            <span class="slds-p-around_medium slds-p-left_small">{strTitle}</span>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <lightning-button-icon icon-name="utility:refresh" 
+                                    alternative-text="Refresh" 
+                                    class="slds-p-around_xx-small" 
+                                    onclick={refreshComponent}></lightning-button-icon>
+        </h2>
+        <div class="slds-m-around_medium">  
+              <div if:true={records.data}>    
+                <template for:each={records.data} for:item="rec">      
+                    <div key={rec.Id} class="slds-box">    
+                        <lightning-record-form record-id={rec.Id}   
+                                               object-api-name={objectName}  
+                                               layout-type={layout}   
+                                               mode="view"  
+                                               columns={columns}>                          
+                        </lightning-record-form>    
+                    </div>                        
+                </template>    
+            </div>    
+        </div>    
+    </lightning-card>        
+</template>  

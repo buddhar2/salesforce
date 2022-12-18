@@ -1,0 +1,30 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card>
+        <div class="slds-p-left_small">
+            <lightning-datatable 
+                    columns={columns} 
+                    data={timesheets} 
+                    key-field="id" 
+                    onrowselection={handleRowSelection}>
+            </lightning-datatable>
+            <div class="slds-p-around_small">
+                <lightning-button 
+                    variant="success" 
+                    label="Reject" 
+                    disabled={disableButton}
+                    onclick={rejectSelectedTimesheets}>
+                </lightning-button>
+
+                <lightning-button 
+                        variant="destructive" 
+                        class="slds-p-left_small"
+                        label="Approve" 
+                        disabled={disableButton}
+                        onclick={approveSelectedTimesheets}>
+                </lightning-button>
+            </div>
+            
+        </div> 
+    </lightning-card>
+</template>

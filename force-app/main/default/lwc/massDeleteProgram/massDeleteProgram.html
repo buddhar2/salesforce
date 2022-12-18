@@ -1,0 +1,16 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-quick-action-panel header="Employees">
+        <lightning-card>
+            <p class="slds-p-horizontal_small">
+                <lightning-datatable data={contacts} columns={columns} key-field="id" onrowselection={handleRowSelection}>
+                </lightning-datatable>
+            </p>
+        </lightning-card>
+        <div slot="footer">
+            <lightning-button variant="neutral" label="Cancel" onclick={closeAction}></lightning-button>
+            &nbsp; &nbsp;
+            <lightning-button variant="destructive" disabled={isButtonDisabled} label="Unassign" onclick={deleteAssignments}></lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>
